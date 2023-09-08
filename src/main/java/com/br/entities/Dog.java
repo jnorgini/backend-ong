@@ -29,12 +29,10 @@ public class Dog {
 	private String raca;
 	private String porte;
 	private String peso;
+	private String castrado;
+	private String vacinado;
 
 	@Column(name = "descricao_pet", columnDefinition = "TEXT")
 	private String descricaoPet;
-	@Column(name = "castrado", columnDefinition = "BOOLEAN")
-	private boolean castrado;
-	@Column(name = "vacinado", columnDefinition = "BOOLEAN")
-	private boolean vacinado;
 
 }

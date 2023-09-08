@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.br.dto.DogDTO;
 import com.br.entities.Dog;
-import com.br.services.ServiceDog;
+import com.br.services.DogService;
 
 @RestController
 @RequestMapping("/dogs")
 @CrossOrigin(origins = "*")
-public class ControllerDog {
+public class DogController {
 
 	@Autowired
-	private ServiceDog service;
+	private DogService service;
 
 	@GetMapping("/all")
 	public ResponseEntity<List<Dog>> findAll() {
@@ -52,9 +52,8 @@ public class ControllerDog {
 	}
 
 	@DeleteMapping("{id}")
-	public ResponseEntity<?> remove(@PathVariable Long id) {
+	public void remove(@PathVariable Long id) {
 		service.remove(id);
-		return new ResponseEntity<>("Cadastro removido com sucesso!", HttpStatus.ACCEPTED);
 	}
 
 }

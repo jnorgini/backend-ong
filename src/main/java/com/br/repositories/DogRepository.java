@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.br.entities.Dog;
 
 @Repository
-public interface RepositoryDog extends JpaRepository<Dog, Long> {
+public interface DogRepository extends JpaRepository<Dog, Long> {
 
 }

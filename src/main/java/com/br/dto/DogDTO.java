@@ -19,9 +19,9 @@ public class DogDTO {
 	private String raca;
 	private String porte;
 	private String peso;
+	private String castrado;
+	private String vacinado;
 	private String descricaoPet;
-	private boolean castrado;
-	private boolean vacinado;
 
 	public DogDTO(Dog entity) {
 		BeanUtils.copyProperties(entity, this);

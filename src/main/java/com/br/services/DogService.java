@@ -5,7 +5,7 @@ import java.util.List;
 import com.br.dto.DogDTO;
 import com.br.entities.Dog;
 
-public interface ServiceDog {
+public interface DogService {
 
 	public List<Dog> findAll();
 

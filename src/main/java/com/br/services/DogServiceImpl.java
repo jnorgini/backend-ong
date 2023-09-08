@@ -8,13 +8,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.br.dto.DogDTO;
 import com.br.entities.Dog;
-import com.br.repositories.RepositoryDog;
+import com.br.repositories.DogRepository;
 
 @Service
-public class ServiceDogImpl implements ServiceDog {
+public class DogServiceImpl implements DogService {
 
 	@Autowired
-	private RepositoryDog repo;
+	private DogRepository repo;
 
 	@Override
 	public List<Dog> findAll() {
