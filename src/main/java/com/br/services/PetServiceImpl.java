@@ -6,34 +6,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.br.dto.DogDTO;
-import com.br.entities.Dog;
-import com.br.repositories.DogRepository;
+import com.br.dto.PetDTO;
+import com.br.entities.Pet;
+import com.br.repositories.PetRepository;
 
 @Service
-public class DogServiceImpl implements DogService {
+public class PetServiceImpl implements PetService {
 
 	@Autowired
-	private DogRepository repo;
+	private PetRepository repo;
 
 	@Override
-	public List<Dog> findAll() {
+	public List<Pet> findAll() {
 		return repo.findAll();
 	}
 
 	@Override
-	public Dog add(Dog obj) {
+	public Pet add(Pet obj) {
 		return repo.save(obj);
 	}
 
 	@Transactional(readOnly = true)
-	public DogDTO findById(Long id) {
-		Dog obj = repo.findById(id).get();
-		return new DogDTO(obj);
+	public PetDTO findById(Long id) {
+		Pet obj = repo.findById(id).get();
+		return new PetDTO(obj);
 	}
 
 	@Override
-	public Dog update(Dog obj) {
+	public Pet update(Pet obj) {
 		return repo.save(obj);
 	}
 

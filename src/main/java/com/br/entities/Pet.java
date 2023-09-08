@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "dog")
+@Table(name = "pet")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Dog {
+public class Pet {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,14 +2,14 @@ package com.br.dto;
 
 import org.springframework.beans.BeanUtils;
 
-import com.br.entities.Dog;
+import com.br.entities.Pet;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class DogDTO {
+public class PetDTO {
 
 	private Long id;
 	private String nome;
@@ -23,7 +23,7 @@ public class DogDTO {
 	private String vacinado;
 	private String descricaoPet;
 
-	public DogDTO(Dog entity) {
+	public PetDTO(Pet entity) {
 		BeanUtils.copyProperties(entity, this);
 	}
 

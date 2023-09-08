@@ -15,40 +15,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.dto.DogDTO;
-import com.br.entities.Dog;
-import com.br.services.DogService;
+import com.br.dto.PetDTO;
+import com.br.entities.Pet;
+import com.br.services.PetService;
 
 @RestController
-@RequestMapping("/dogs")
+@RequestMapping("/pets")
 @CrossOrigin(origins = "*")
-public class DogController {
+public class PetController {
 
 	@Autowired
-	private DogService service;
+	private PetService service;
 
 	@GetMapping("/all")
-	public ResponseEntity<List<Dog>> findAll() {
-		List<Dog> dogs = service.findAll();
-		return new ResponseEntity<>(dogs, HttpStatus.OK);
+	public ResponseEntity<List<Pet>> findAll() {
+		List<Pet> pets = service.findAll();
+		return new ResponseEntity<>(pets, HttpStatus.OK);
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<DogDTO> findById(@PathVariable Long id) {
-		DogDTO obj = service.findById(id);
+	public ResponseEntity<PetDTO> findById(@PathVariable Long id) {
+		PetDTO obj = service.findById(id);
 		return new ResponseEntity<>(obj, HttpStatus.OK);
 	}
 
 	@PostMapping("/add")
-	public ResponseEntity<Dog> add(@RequestBody Dog obj) {
-		Dog newDog = service.add(obj);
-		return new ResponseEntity<>(newDog, HttpStatus.CREATED);
+	public ResponseEntity<Pet> add(@RequestBody Pet obj) {
+		Pet newPet = service.add(obj);
+		return new ResponseEntity<>(newPet, HttpStatus.CREATED);
 	}
 
 	@PutMapping("/update")
-	public ResponseEntity<Dog> update(@RequestBody Dog obj) {
-		Dog updateDog = service.update(obj);
-		return new ResponseEntity<>(updateDog, HttpStatus.ACCEPTED);
+	public ResponseEntity<Pet> update(@RequestBody Pet obj) {
+		Pet updatePet = service.update(obj);
+		return new ResponseEntity<>(updatePet, HttpStatus.ACCEPTED);
 	}
 
 	@DeleteMapping("{id}")

@@ -3,9 +3,9 @@ package com.br.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.br.entities.Dog;
+import com.br.entities.Pet;
 
 @Repository
-public interface DogRepository extends JpaRepository<Dog, Long> {
+public interface PetRepository extends JpaRepository<Pet, Long> {
 
 }
