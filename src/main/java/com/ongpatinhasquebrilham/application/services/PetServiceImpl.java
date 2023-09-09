@@ -1,19 +1,17 @@
-package com.br.services;
+package com.ongpatinhasquebrilham.application.services;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ongpatinhasquebrilham.application.entities.Pet;
+import com.ongpatinhasquebrilham.application.repositories.PetRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.br.dto.PetDTO;
-import com.br.entities.Pet;
-import com.br.repositories.PetRepository;
+import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class PetServiceImpl implements PetService {
 
-	@Autowired
 	private PetRepository repo;
 
 	@Override
@@ -27,9 +25,8 @@ public class PetServiceImpl implements PetService {
 	}
 
 	@Transactional(readOnly = true)
-	public PetDTO findById(Long id) {
-		Pet obj = repo.findById(id).get();
-		return new PetDTO(obj);
+	public Pet findById(Long id) {
+		return repo.findById(id).orElse(null);
 	}
 
 	@Override
@@ -40,7 +37,6 @@ public class PetServiceImpl implements PetService {
 	@Override
 	public void remove(Long id) {
 		repo.deleteById(id);
-
 	}
 
 }
