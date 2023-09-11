@@ -1,7 +1,7 @@
-package com.ongpatinhasquebrilham.application.controllers;
+package com.ongpatinhasquebrilham.api.petcontrol.controllers;
 
-import com.ongpatinhasquebrilham.application.entities.Pet;
-import com.ongpatinhasquebrilham.application.services.PetService;
+import com.ongpatinhasquebrilham.api.petcontrol.domain.pet.Pet;
+import com.ongpatinhasquebrilham.api.petcontrol.services.PetService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

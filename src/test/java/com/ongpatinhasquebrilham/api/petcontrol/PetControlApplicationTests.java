@@ -1,10 +1,10 @@
-package com.ongpatinhasquebrilham.application;
+package com.ongpatinhasquebrilham.api.petcontrol;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PrototipoApplicationTests {
+class PetControlApplicationTests {
 
 	@Test
 	void contextLoads() {

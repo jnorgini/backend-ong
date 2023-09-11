@@ -1,13 +1,13 @@
-package com.ongpatinhasquebrilham.application;
+package com.ongpatinhasquebrilham.api.petcontrol;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrototipoApplication {
+public class PetControlApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PrototipoApplication.class, args);
+		SpringApplication.run(PetControlApplication.class, args);
 	}
 
 }

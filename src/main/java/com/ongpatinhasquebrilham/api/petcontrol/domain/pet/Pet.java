@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.application.entities;
+package com.ongpatinhasquebrilham.api.petcontrol.domain.pet;
 
 import jakarta.persistence.*;
 import lombok.Getter;

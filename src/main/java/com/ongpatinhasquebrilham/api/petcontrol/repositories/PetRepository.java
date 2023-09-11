@@ -1,6 +1,6 @@
-package com.ongpatinhasquebrilham.application.repositories;
+package com.ongpatinhasquebrilham.api.petcontrol.repositories;
 
-import com.ongpatinhasquebrilham.application.entities.Pet;
+import com.ongpatinhasquebrilham.api.petcontrol.domain.pet.Pet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

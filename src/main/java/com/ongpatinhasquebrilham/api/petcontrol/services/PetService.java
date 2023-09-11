@@ -1,6 +1,6 @@
-package com.ongpatinhasquebrilham.application.services;
+package com.ongpatinhasquebrilham.api.petcontrol.services;
 
-import com.ongpatinhasquebrilham.application.entities.Pet;
+import com.ongpatinhasquebrilham.api.petcontrol.domain.pet.Pet;
 
 import java.util.List;
 
