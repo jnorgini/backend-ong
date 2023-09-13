@@ -16,8 +16,16 @@ import java.util.List;
 public class PetController {
 
 	private PetService service;
+	/*
+	GET    /pets       -> Retorna uma lista de pets
+	GET    /pets/{id}  -> Retorna o pet através do id
+	POST   /pets       -> Cria um pet
+	PUT    /pets/{id}  -> Atualiza o pet através do id
+	PATCH  /pets/{id}  -> Atualiza parcialmente o pet através do id
+	DELETE /pets/{id}  -> Remove o pet através do id
+	 */
 
-	@GetMapping("/all")
+	@GetMapping
 	public ResponseEntity<List<Pet>> findAll() {
 		List<Pet> pets = service.findAll();
 		return new ResponseEntity<>(pets, HttpStatus.OK);
@@ -29,13 +37,13 @@ public class PetController {
 		return new ResponseEntity<>(pet, HttpStatus.OK);
 	}
 
-	@PostMapping("/add")
+	@PostMapping
 	public ResponseEntity<Pet> add(@RequestBody Pet obj) {
 		Pet newPet = service.add(obj);
 		return new ResponseEntity<>(newPet, HttpStatus.CREATED);
 	}
 
-	@PutMapping("/update")
+	@PutMapping("/update") //@PutMapping("/{id}")
 	public ResponseEntity<Pet> update(@RequestBody Pet obj) {
 		Pet updatePet = service.update(obj);
 		return new ResponseEntity<>(updatePet, HttpStatus.ACCEPTED);
