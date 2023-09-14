@@ -43,12 +43,12 @@ public class PetController {
 		return new ResponseEntity<>(newPet, HttpStatus.CREATED);
 	}
 
-	@PutMapping("/update") //@PutMapping("/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<Pet> update(@RequestBody Pet obj) {
 		Pet updatePet = service.update(obj);
 		return new ResponseEntity<>(updatePet, HttpStatus.ACCEPTED);
 	}
-
+	
 	@DeleteMapping("{id}")
 	public void remove(@PathVariable Long id) {
 		service.remove(id);
