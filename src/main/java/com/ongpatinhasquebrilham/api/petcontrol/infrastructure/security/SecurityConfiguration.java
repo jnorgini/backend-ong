@@ -23,20 +23,17 @@ public class SecurityConfiguration {
     private SecurityFilter securityFilter;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        //TODO: refactor
-        return httpSecurity
+        return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/pets").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/pets").permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/pets/{id}").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/pets/{id}").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers(HttpMethod.POST, "/auth/register").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/pets").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/pets/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/pets/{id}").hasRole("ADMIN")
+                        .anyRequest().permitAll()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
@@ -51,4 +48,5 @@ public class SecurityConfiguration {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 }

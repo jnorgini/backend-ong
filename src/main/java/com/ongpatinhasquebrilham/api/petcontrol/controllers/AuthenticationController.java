@@ -18,7 +18,6 @@ import java.util.Objects;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class AuthenticationController {
 
@@ -26,20 +25,8 @@ public class AuthenticationController {
     private UserRepository repository;
     private TokenService tokenService;
 
-
     @PostMapping(path = "/login", consumes = "application/json")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data) {
-        var usernamePassword = new UsernamePasswordAuthenticationToken(data.username(), data.password());
-        var auth = this.authenticationManager.authenticate(usernamePassword);
-
-        var token = tokenService.generateToken((User) auth.getPrincipal());
-
-        return ResponseEntity.ok(new LoginResponseDTO(token));
-    }
-
-    //TODO: refactor
-    @PostMapping(path = "/login", consumes = "application/x-www-form-urlencoded")
-    public ResponseEntity loginForm(AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.username(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
