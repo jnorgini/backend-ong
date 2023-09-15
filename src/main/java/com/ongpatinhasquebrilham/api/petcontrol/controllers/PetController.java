@@ -5,25 +5,17 @@ import com.ongpatinhasquebrilham.api.petcontrol.services.PetService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/pets")
-@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class PetController {
 
 	private PetService service;
-	/*
-	GET    /pets       -> Retorna uma lista de pets
-	GET    /pets/{id}  -> Retorna o pet através do id
-	POST   /pets       -> Cria um pet
-	PUT    /pets/{id}  -> Atualiza o pet através do id
-	PATCH  /pets/{id}  -> Atualiza parcialmente o pet através do id
-	DELETE /pets/{id}  -> Remove o pet através do id
-	 */
 
 	@GetMapping
 	public ResponseEntity<List<Pet>> findAll() {
@@ -44,11 +36,12 @@ public class PetController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Pet> update(@RequestBody Pet obj) {
+	public ResponseEntity<Pet> update(@PathVariable Long id, @RequestBody Pet obj) {
+		obj.setId(id);
 		Pet updatePet = service.update(obj);
 		return new ResponseEntity<>(updatePet, HttpStatus.ACCEPTED);
 	}
-	
+
 	@DeleteMapping("{id}")
 	public void remove(@PathVariable Long id) {
 		service.remove(id);
