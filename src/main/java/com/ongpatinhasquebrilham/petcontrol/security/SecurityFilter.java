@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.api.petcontrol.infrastructure.security;
+package com.ongpatinhasquebrilham.petcontrol.security;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.ongpatinhasquebrilham.api.petcontrol.repositories.UserRepository;
+import com.ongpatinhasquebrilham.petcontrol.domain.repository.UserRepository;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

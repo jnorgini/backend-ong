@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.api.petcontrol;
+package com.ongpatinhasquebrilham.petcontrol;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

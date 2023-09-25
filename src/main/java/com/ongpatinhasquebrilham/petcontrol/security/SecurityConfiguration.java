@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.api.petcontrol.infrastructure.security;
+package com.ongpatinhasquebrilham.petcontrol.security;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;

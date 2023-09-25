@@ -1,6 +1,6 @@
-package com.ongpatinhasquebrilham.api.petcontrol.services;
+package com.ongpatinhasquebrilham.petcontrol.domain.service;
 
-import com.ongpatinhasquebrilham.api.petcontrol.repositories.UserRepository;
+import com.ongpatinhasquebrilham.petcontrol.domain.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

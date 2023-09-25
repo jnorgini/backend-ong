@@ -1,7 +1,7 @@
-package com.ongpatinhasquebrilham.api.petcontrol.services;
+package com.ongpatinhasquebrilham.petcontrol.domain.service;
 
-import com.ongpatinhasquebrilham.api.petcontrol.domain.pet.Pet;
-import com.ongpatinhasquebrilham.api.petcontrol.repositories.PetRepository;
+import com.ongpatinhasquebrilham.petcontrol.domain.model.Pet;
+import com.ongpatinhasquebrilham.petcontrol.domain.repository.PetRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

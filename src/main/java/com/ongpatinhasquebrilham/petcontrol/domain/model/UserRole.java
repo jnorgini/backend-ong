@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.api.petcontrol.domain.user;
+package com.ongpatinhasquebrilham.petcontrol.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

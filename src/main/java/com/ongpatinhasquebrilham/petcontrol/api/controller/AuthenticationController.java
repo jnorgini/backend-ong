@@ -1,11 +1,11 @@
-package com.ongpatinhasquebrilham.api.petcontrol.controllers;
+package com.ongpatinhasquebrilham.petcontrol.api.controller;
 
-import com.ongpatinhasquebrilham.api.petcontrol.domain.user.AuthenticationDTO;
-import com.ongpatinhasquebrilham.api.petcontrol.domain.user.LoginResponseDTO;
-import com.ongpatinhasquebrilham.api.petcontrol.domain.user.RegisterDTO;
-import com.ongpatinhasquebrilham.api.petcontrol.domain.user.User;
-import com.ongpatinhasquebrilham.api.petcontrol.infrastructure.security.TokenService;
-import com.ongpatinhasquebrilham.api.petcontrol.repositories.UserRepository;
+import com.ongpatinhasquebrilham.petcontrol.api.dto.RegisterDTO;
+import com.ongpatinhasquebrilham.petcontrol.api.dto.AuthenticationDTO;
+import com.ongpatinhasquebrilham.petcontrol.api.dto.LoginResponseDTO;
+import com.ongpatinhasquebrilham.petcontrol.domain.model.User;
+import com.ongpatinhasquebrilham.petcontrol.security.TokenService;
+import com.ongpatinhasquebrilham.petcontrol.domain.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +25,7 @@ public class AuthenticationController {
     private UserRepository repository;
     private TokenService tokenService;
 
-    @PostMapping(path = "/login", consumes = "application/json")
+    @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.username(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);

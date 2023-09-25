@@ -1,10 +1,9 @@
-package com.ongpatinhasquebrilham.api.petcontrol.domain.pet;
+package com.ongpatinhasquebrilham.petcontrol.domain.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SourceType;
 
@@ -12,8 +11,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Pet {
 	//TODO: fix attributes types

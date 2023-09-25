@@ -1,9 +1,8 @@
-package com.ongpatinhasquebrilham.api.petcontrol.repositories;
+package com.ongpatinhasquebrilham.petcontrol.domain.repository;
 
+import com.ongpatinhasquebrilham.petcontrol.domain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
-
-import com.ongpatinhasquebrilham.api.petcontrol.domain.user.User;
 
 import java.util.UUID;
 

@@ -1,11 +1,10 @@
-package com.ongpatinhasquebrilham.api.petcontrol.controllers;
+package com.ongpatinhasquebrilham.petcontrol.api.controller;
 
-import com.ongpatinhasquebrilham.api.petcontrol.domain.pet.Pet;
-import com.ongpatinhasquebrilham.api.petcontrol.services.PetService;
+import com.ongpatinhasquebrilham.petcontrol.domain.model.Pet;
+import com.ongpatinhasquebrilham.petcontrol.domain.service.PetService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.api.petcontrol.domain.user;
+package com.ongpatinhasquebrilham.petcontrol.api.dto;
 
 public record AuthenticationDTO(String username, String password) {
 }

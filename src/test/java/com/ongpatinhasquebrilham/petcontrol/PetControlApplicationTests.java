@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.api.petcontrol;
+package com.ongpatinhasquebrilham.petcontrol;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
