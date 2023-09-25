@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.petcontrol.security;
+package com.ongpatinhasquebrilham.petcontrol.infrastructure.security;
 
 import java.io.IOException;
 import java.util.Objects;

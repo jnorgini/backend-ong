@@ -4,7 +4,7 @@ import com.ongpatinhasquebrilham.petcontrol.api.dto.RegisterDTO;
 import com.ongpatinhasquebrilham.petcontrol.api.dto.AuthenticationDTO;
 import com.ongpatinhasquebrilham.petcontrol.api.dto.LoginResponseDTO;
 import com.ongpatinhasquebrilham.petcontrol.domain.model.User;
-import com.ongpatinhasquebrilham.petcontrol.security.TokenService;
+import com.ongpatinhasquebrilham.petcontrol.infrastructure.security.TokenService;
 import com.ongpatinhasquebrilham.petcontrol.domain.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

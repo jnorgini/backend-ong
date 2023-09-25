@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.petcontrol.security;
+package com.ongpatinhasquebrilham.petcontrol.infrastructure.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
