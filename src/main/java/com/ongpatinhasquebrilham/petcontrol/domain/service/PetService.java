@@ -25,9 +25,21 @@ public class PetService {
 		repository.deleteById(petId);
 	}
 
-	//TODO: feat findAll
-	//public List<Pet> findAll() {
-	//}
+	@Transactional
+	public void turnAvailable(Long petId) {
+		Pet currentPet = find(petId);
+		currentPet.turnAvailable();
+	}
+
+	@Transactional
+	public void turnUnavailable(Long petId) {
+		Pet currentPet = find(petId);
+		currentPet.turnUnavailable();
+	}
+
+	public List<Pet> findAll() {
+		return repository.findAll();
+	}
 
 	public Pet find(Long petId) {
 		return repository.findById(petId)

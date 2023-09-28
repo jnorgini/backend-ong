@@ -46,6 +46,13 @@ public class Pet {
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime createdAt;
 
-	private boolean active;
+	private boolean available;
+
+	public void turnAvailable() {
+		setAvailable(true);
+	}
+	public void turnUnavailable() {
+		setAvailable(false);
+	}
 
 }
