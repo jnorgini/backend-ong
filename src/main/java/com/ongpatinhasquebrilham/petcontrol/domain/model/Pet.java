@@ -14,18 +14,8 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Pet {
+
 	//TODO: fix attributes types
-
-/*
-** espécie (pré-definido)
-** gênero (pré-definido)
-** idade estimada (int) [calcular e armazenar como data]
-** raça (max 40 caracteres)
-** porte (pré-definido)
-** peso (max 3 dígitos/99.9kg)
-** castrado (boleano)
-*/
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include

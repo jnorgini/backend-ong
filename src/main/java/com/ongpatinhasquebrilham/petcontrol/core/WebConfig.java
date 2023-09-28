@@ -1,4 +1,4 @@
-package com.ongpatinhasquebrilham.petcontrol.configuration;
+package com.ongpatinhasquebrilham.petcontrol.core;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
