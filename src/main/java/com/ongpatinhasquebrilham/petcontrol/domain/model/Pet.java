@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Pet {
 
-	//TODO: fix attributes types
+	//TODO: Validation and fix attributes types
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
