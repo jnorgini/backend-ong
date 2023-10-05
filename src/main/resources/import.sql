@@ -1,0 +1,1 @@
+INSERT INTO user (role, username, password) VALUES (0, "admin", "$2a$10$Zoh4BBssixMDBPXc0m/uteSZ8rNWiRBNyNuFsiVwCQqNyVKxpHFFa");
