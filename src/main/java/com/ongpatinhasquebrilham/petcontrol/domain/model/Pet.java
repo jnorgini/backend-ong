@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Pet {
 
-	//TODO: Validation and fix attributes types
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
@@ -24,17 +23,33 @@ public class Pet {
 	@Column(length = 80, nullable = false)
 	private String name;
 
-	private String species;			//ENTIDADE: espécie de animal, criar uma tabela e popular automaticamente
-	private String gender;			//enum
-	private LocalDate birthdate;	//ajustar mes e ano
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private PetSpecies species;
+
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private PetGender gender;
+
+	@Column(nullable = false)
+	private LocalDate birthdate;
+
+	@Column(nullable = false)
 	private String breed;
-	private String size;			//ENTIDADE: porte: criar uma tabela e popular automaticamente
-	private Integer weight;			//peso
-	private boolean isNeutered;
+
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private PetSize size;
+
+	@Column(nullable = false)
+	private double weight;
 
 	@Pattern(regexp = "[0-9]{15}")
 	@Column(length = 15)
 	private String microchip;
+
+	@Column(columnDefinition = "boolean default false", nullable = false)
+	private boolean isNeutered;
 
 	@Column(columnDefinition = "TEXT")
 	private String vaccination;
@@ -46,6 +61,7 @@ public class Pet {
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime createdAt;
 
+	@Column(columnDefinition = "boolean default true", nullable = false)
 	private boolean available;
 
 	public void turnAvailable() {

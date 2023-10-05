@@ -15,9 +15,9 @@ public class PetModel {
     private Integer ageInMonths;
     private String breed;
     private String size;
-    private Integer weight;
-    private boolean isNeutered;
+    private double weight;
     private String microchip;
+    private boolean isNeutered;
     private String vaccination;
     private String description;
 }
