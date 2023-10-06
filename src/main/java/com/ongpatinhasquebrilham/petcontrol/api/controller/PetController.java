@@ -24,8 +24,8 @@ public class PetController {
 	private PetInputModelDisassembler petInputModelDisassembler;
 
 	@GetMapping
-	public ResponseEntity<List<PetModel>> getPets() {
-		List<Pet> pets = petService.findAll();
+	public ResponseEntity<List<PetModel>> getAvailablePets() {
+		List<Pet> pets = petService.findAllByAvailable(true);
 		return ResponseEntity.ok(petModelAssembler.toCollectionModel(pets));
 	}
 
@@ -33,6 +33,12 @@ public class PetController {
 	public ResponseEntity<PetModel> savePet(@Valid @RequestBody PetInputModel petInputModel) {
 		Pet newPet = petService.save(petInputModelDisassembler.toDomainObject(petInputModel));
 		return ResponseEntity.status(HttpStatus.CREATED).body(petModelAssembler.toModel(newPet));
+	}
+
+	@GetMapping("/unavailable")
+	public ResponseEntity<List<PetModel>> getUnavailablePets() {
+		List<Pet> pets = petService.findAllByAvailable(false);
+		return ResponseEntity.ok(petModelAssembler.toCollectionModel(pets));
 	}
 
 	@GetMapping("/{petId}")

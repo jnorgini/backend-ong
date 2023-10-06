@@ -41,6 +41,10 @@ public class PetService {
 		return repository.findAll();
 	}
 
+	public List<Pet> findAllByAvailable(boolean available) {
+		return repository.findAllByAvailable(available);
+	}
+
 	public Pet find(Long petId) {
 		return repository.findById(petId)
 				.orElseThrow(() -> new PetNotFoundException(petId));

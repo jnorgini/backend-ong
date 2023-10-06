@@ -48,7 +48,7 @@ public class Pet {
 	@Column(length = 15)
 	private String microchip;
 
-	@Column(columnDefinition = "boolean default false", nullable = false)
+	@Column(nullable = false)
 	private boolean isNeutered;
 
 	@Column(columnDefinition = "TEXT")
@@ -61,8 +61,8 @@ public class Pet {
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime createdAt;
 
-	@Column(columnDefinition = "boolean default true", nullable = false)
-	private boolean available;
+	@Column(nullable = false)
+	private boolean available = true;
 
 	public void turnAvailable() {
 		setAvailable(true);
